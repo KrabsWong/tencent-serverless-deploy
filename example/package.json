@@ -1,0 +1,7 @@
+{
+  "name": "Test",
+  "description": "Deploy Tencent Serverless with Github Action Workflow",
+  "dependencies": {
+    "urllib": "^3.11.0"
+  }
+}

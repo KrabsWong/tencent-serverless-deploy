@@ -1,0 +1,23 @@
+app: test
+component: scf
+inputs:
+  description: helloworld 空白模板函数
+  eip: false
+  handler: index.main_handler
+  initTimeout: 65
+  memorySize: 512
+  msgTTL: 21600
+  name: test
+  namespace: default
+  publicAccess: true
+  region: ap-guangzhou
+  retryNum: 2
+  runtime: Nodejs14.18
+  src: ./src
+  timeout: 3
+  type: event
+name: ap-guangzhou_default_test
+org: '' # 下载的 yml 配置中，这里的内容是默认就带的
+stage: prod
+# When using this configuration file for deployment, make sure the file name is "serverless.yml".
+#
