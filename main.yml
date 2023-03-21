@@ -1,0 +1,26 @@
+name: deploy serverless scf
+on: #监听的事件和分支配置
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    name: deploy serverless scf
+    runs-on: ubuntu-latest
+    env:
+      SERVERLESS_PLATFORM_VENDOR: tencent #serverless 境外默认为 aws，配置为腾讯
+      TENCENT_SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }} #您的腾讯云账号 sercret ID，请在Settings-Secrets中配置
+      TENCENT_SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY }} #您的腾讯云账号 sercret key，请在Settings-Secrets中配置
+    steps:
+      - name: clone local repository
+        uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+      - name: install dependency
+        run: npm install
+      - name: install serverless cli
+        # 使用 serverless-tencent 的包，对应的命令是 slt
+        run: sudo npm i serverless-tencent -g
+      - name: deploy
+        run: slt deploy
