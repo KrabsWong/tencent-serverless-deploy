@@ -20,7 +20,7 @@ github action 部分的配置就 OK 了
 
 在 Tencent cloud 的控制台，创建一个 event 类型的 SCF
 
-手动下载 yml 配置文件。
+手动下载 serverless.yml 配置文件，放到仓库的根目录。（文件名确保是 `serverless.yml`）
 
 <img width="1205" alt="image" src="https://user-images.githubusercontent.com/12368943/226576349-b19f84d0-dadf-404a-8541-d898f093e11a.png">
 
