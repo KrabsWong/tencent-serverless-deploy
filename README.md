@@ -1,4 +1,4 @@
-# tencent-serverless-deploy
+# 使用 Github Action 自动部署 Tencent Serverless 项目
 
 在仓库中新增目录 `.github/workflows/main.yml`
 
