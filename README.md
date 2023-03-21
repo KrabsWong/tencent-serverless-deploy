@@ -14,7 +14,9 @@ github action 部分的配置就 OK 了
 2. 设置当前构建所需要的 nodejs 版本
 3. 安装依赖
 4. 全局安装 `serverless` 的 cli 工具
-5. 执行部署
+5. 全局安装 `typescript` （不需要使用 typescript，则注释掉该步骤）
+6. 执行 `tsc` 编译 typescirpt 文件（不需要使用 typescript，则注释掉该步骤）
+7. 执行部署
 
 ## serverless 配置
 
@@ -24,9 +26,8 @@ github action 部分的配置就 OK 了
 
 <img width="1205" alt="image" src="https://user-images.githubusercontent.com/12368943/226576349-b19f84d0-dadf-404a-8541-d898f093e11a.png">
 
-## 必要配置
 
-### 配置 Tencent cloud key/secret
+## github 配置 Tencent cloud key/secret
 
 <img width="1145" alt="image" src="https://user-images.githubusercontent.com/12368943/226575356-9f040e7f-74f5-4260-92f7-d167fe26cc4c.png">
 
@@ -41,3 +42,11 @@ github action 部分的配置就 OK 了
 :----|:----
 TENCENT_SECRET_ID | SecretId 的值
 TENCENT_SECRET_KEY | SecretKey 的值
+
+## 支持 typescript
+
+使用 typescript 编写代码，则需要做一定的目录结构约定
+
+1. typescript 源代码放在个目录的 `source` 文件夹（而不是 `src` 文件夹）
+2. 根目录设置 tsconfig.json 文件，用于编译读取
+3. 编译结果输出到 `src` 目录（构建过程中编译，本地无需提交 `src` 目录）

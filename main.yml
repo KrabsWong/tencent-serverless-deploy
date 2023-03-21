@@ -19,8 +19,15 @@ jobs:
           node-version: '14.x'
       - name: install dependency
         run: npm install
+      # 使用 serverless-tencent 的包，对应的命令是 slt
       - name: install serverless cli
-        # 使用 serverless-tencent 的包，对应的命令是 slt
         run: sudo npm i serverless-tencent -g
+      # 若不使用 typescript，则注释掉该步骤 （默认安装最新版，有版本要求，就修改为指定版本）
+      - name: install typescript
+        run: sudo npm i typescript -g
+      # 若不使用 typescript，则注释掉该步骤
+      # 编译 ts 代码
+      - name: compile typescript
+        run: tsc
       - name: deploy
         run: slt deploy
