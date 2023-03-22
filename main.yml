@@ -16,16 +16,16 @@ jobs:
         uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: '14.x'
-      - name: install dependency
-        run: npm install
-      # 使用 serverless-tencent 的包，对应的命令是 slt
+          node-version: "14.x"
+      # 安装 serverless cli
       - name: install serverless cli
         run: sudo npm i serverless-tencent -g
-      # 若不使用 typescript，则注释掉该步骤 （默认安装最新版，有版本要求，就修改为指定版本）
-      - name: install typescript
+      # 安装 typescript
+      - name: install typescirpt cli
         run: sudo npm i typescript -g
-      # 若不使用 typescript，则注释掉该步骤
+      # 安装依赖
+      - name: install dependency
+        run: npm install
       # 编译 ts 代码
       - name: compile typescript
         run: tsc
