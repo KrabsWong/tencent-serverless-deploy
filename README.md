@@ -6,13 +6,7 @@
 
 github action 部分的配置就 OK 了
 
-不使用 Typescript （源码放在 src 目录）
-
 <img width="239" alt="image" src="https://user-images.githubusercontent.com/12368943/226575759-876fbf50-9f57-43bb-9bc2-b2c33e34599e.png">
-
-使用 Typescript （源码放在 source 目录）
-
-<img width="189" alt="image" src="https://user-images.githubusercontent.com/12368943/226787930-ecd93634-b4a7-4b7e-ae05-b03f4c7601dd.png">
 
 ## 脚本内容
 
@@ -31,7 +25,6 @@ github action 部分的配置就 OK 了
 手动下载 serverless.yml 配置文件，放到仓库的根目录。（文件名确保是 `serverless.yml`）
 
 <img width="1205" alt="image" src="https://user-images.githubusercontent.com/12368943/226576349-b19f84d0-dadf-404a-8541-d898f093e11a.png">
-
 
 ## github 配置 Tencent cloud key/secret
 
@@ -53,6 +46,9 @@ TENCENT_SECRET_KEY | SecretKey 的值
 
 使用 typescript 编写代码，则需要做一定的目录结构约定
 
-1. typescript 源代码放在个目录的 `source` 文件夹（而不是 `src` 文件夹）
-2. 根目录设置 tsconfig.json 文件，用于编译读取
-3. 编译结果输出到 `src` 目录（构建过程中编译，本地无需提交 `src` 目录）
+1. 所有源码依然放在 `src` 目录中
+2. 编译后的 js 代码，会生成在 `src` 同级的 `dist` 目录中
+3. **在项目根目录中，新增 `index.js` 文件，作为实际入口文件存在。其中唯一逻辑，就是调用 `dist/index`
+中的入口方法**
+4. `serverless.yml` 文件配置的 `src` 值设置为当前根目录。目的是将 node_modules 可以打包到发布包中
+5. `tsconfig.json` 放在根目录
