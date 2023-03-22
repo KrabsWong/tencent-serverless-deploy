@@ -6,7 +6,7 @@
 
 github action 部分的配置就 OK 了
 
-<img width="239" alt="image" src="https://user-images.githubusercontent.com/12368943/226575759-876fbf50-9f57-43bb-9bc2-b2c33e34599e.png">
+<img width="849" alt="image" src="https://user-images.githubusercontent.com/12368943/226808338-b800f0be-c712-42fe-b509-9560af94795d.png">
 
 ## 脚本内容
 
