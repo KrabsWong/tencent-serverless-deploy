@@ -13,7 +13,8 @@ inputs:
   region: ap-guangzhou
   retryNum: 2
   runtime: Nodejs14.18
-  src: ./src
+  # 该设置会影响到代码打包时候的根目录，设置为当前目录的目的是将 node_modules 也可以打包进去
+  src: ./
   timeout: 3
   type: event
 name: ap-guangzhou_default_test
