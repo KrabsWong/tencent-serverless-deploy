@@ -6,7 +6,13 @@
 
 github action 部分的配置就 OK 了
 
+不使用 Typescript （源码放在 src 目录）
+
 <img width="239" alt="image" src="https://user-images.githubusercontent.com/12368943/226575759-876fbf50-9f57-43bb-9bc2-b2c33e34599e.png">
+
+使用 Typescript （源码放在 source 目录）
+
+<img width="189" alt="image" src="https://user-images.githubusercontent.com/12368943/226787930-ecd93634-b4a7-4b7e-ae05-b03f4c7601dd.png">
 
 ## 脚本内容
 
